@@ -1,0 +1,203 @@
+<!doctype html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale="1">
+		<style>
+
+			body{
+			   font-family: Arial;
+			   font-size: 17px;
+			   padding: 8px;
+			   }
+			   
+			*{
+			   box-sizing: border-box;
+			 }
+			 
+			.row{
+			   display: -ms-flexbox;
+			   display: flex;
+			   -ms-flex-wrap: wrap;
+				flex-wrap: wrap;
+				margin: 0 -16px;
+				}
+				
+			.col-25{
+				 -ms-flex: 25%;
+				 flex: 25%;
+			}
+
+			.col-50{
+				 -ms-flex: 50%;
+				 flex: 50%;
+			}
+
+			.col-75{
+				 -ms-flex: 75%;
+				 flex: 75%;
+			}
+
+			.col-25,
+			.col-50,
+			.col-75{
+				padding: 0 16px;
+			}
+
+			.container{
+				background-color:#f2f2f2;
+				padding: 5px 20px 15px 20px;
+				border: 1px solid light grey;
+				border-radius: 3px;
+			}
+
+			input[type=text] {
+				width: 100%;
+				margin-bottom: 20px;
+				padding: 12px;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+				}
+
+			label{
+				margin-bottom: 10px;
+				display: block;
+			}	
+
+			.icon-container{
+				margin-bottom: 20px;
+				padding: 7px 0;
+				font-size: 24px;
+			}
+
+			.btn{
+				background-color: #66ff66;
+				color: white:
+				padding: 12px;
+				margin: 10px 0;
+				border: none;
+				width: 100%;
+				border-radius: 3px;
+				cursor: pointer;
+				font-size: 30px;
+				font-family: Times New Roman;
+			}
+
+			.btn:hover{
+				 background-color:#00e600;
+				 color: orange;
+				 border: 1px solid lightgrey;
+				 font-weight:bold;
+			}
+			
+
+			span.price{
+				 float:right;
+				 color: gery;
+				}
+
+			@media (max-width: 800px) {
+				 .row{
+					flex-directio: column-reverse;
+				 }
+				 .col-25{
+				  margin-bottom:20px;
+				  }
+			}	  
+		</style>
+		
+	</head>
+	<body>
+
+		<h2 style="background-color: lightgrey">Payment Gateway</h2>
+		<div class="row">
+			<div class="col-75">
+				<div class="container">
+					<form >
+						<div class="row">
+							<div class= "col-50">
+							
+								<h2>Billing Address</h2>
+								<label for="fname"> Full Name </label>
+								<input type="text" id="fname" name="firstname" placeholder="Enter Your Name">
+								
+								<label for="email"> Email</label>
+								<input type="text" id="email" name="email" placeholder="abc@example.com">
+                         
+								<label for="adr"> Address</label>
+								<input type="text" id="adr" name="address" placeholder="House No./Street">
+								
+								<label for="city"> City</label>
+								<input type="text" id="city" name="city" placeholder="Chandigarh">
+
+
+								<div class="row">
+									<div class="col-50">
+										<label for="state"> State </label>
+										<input type="text" id="state" name="state" placeholder="Punjab">
+									</div>
+									<div class="col-50">
+										<label for="zip">Pin Code</label>			 
+										<input type="text" id="zip" name="Pin Code" placeholder="160022">
+									</div>
+								</div>
+							</div>
+              
+							<div class="col-50">
+								<h2>Payment </h2>
+                      
+								<div class="icon container">
+									<h3>Accepted Cards   
+									<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDifYMuOZzNrPAZV0vzS0zrR5lGOae8DBKydsbwrKozztLYWVEl3lfVD9LSFwM-YFlo3I&usqp=CAU" width="70px" height="25px">
+									<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/MasterCard_Logo.svg/1200px-MasterCard_Logo.svg.png" width="70px" height="25px">
+									<img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/RuPay-Logo.png" width="70px" height="25px">
+									</h3>
+								</div>
+								
+								<label for="cname">Name on Card</label>
+								<input type="text" id="cname" name="cardname" placeholder="Enter Your Name" maxlength="12" required>
+                         
+								<label for="ccnum">Credit/Debit Card number</label>
+								<input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" maxlength="16" required>
+                                      
+								<label for="expmonth">Exp Month</label>
+                                <input type="text" id="expmenth" name="expoonth" placeholder="May" required>
+                                
+								<div class="row">
+                                    <div class="col-50">
+                                        <label for="expyear">Exp Year </label>
+                                        <input type="text" id="expyear" name="expyear" placeholder="2028" maxlength="4" required>
+                                    </div> 
+									
+									<div class="col-50">
+                                        <label for="cvv">CVV</label>
+                                        <input type="text" Id="cvv" name="cvv" placeholder="***" maxlength="3" required>
+                                    </div>
+								</div>
+							</div>
+									  
+						</div>
+						
+						<input type="checkbox"> <b>Shipping Address Same As Billing</b>
+			  
+						<!--<input type="submit" value="Continue to Checkout !!" class="btn" onclick="abc()">-->
+						<button type="submit" class="btn"><a href="PaymentDone.html" target="_self" style="color:black">Proceed To Pay</a></button>
+					</form>
+				</div>
+			</div>
+		
+			<div class="col-25">
+				<div class="container">
+					<h2 style="text-align:center">Cart</h2>
+					<p><b style="text-decoration:underline">Items</b> <span class="price"><b style="text-decoration:underline">Price</b></span></p>
+					<p>Black Chair <span class="price">₹1,299</span></p>
+					<p>5 Seater Sofa Cum Bed <span class="price">₹48,999</span></p>
+					<p>Blue Velvet Chair <span class="price">₹12,999</span></p>
+					<p>Modern Two Seater Sofa <span class="price">₹14,999</span></p>
+					<hr>
+					<p><b>Total:</b> <span (class="price" style="color:black"><b>₹82,210 (GST Inclusive)</h></span></p> 
+				</div>
+			</div>
+		</div>
+							  
+	</body>
+</html>	
